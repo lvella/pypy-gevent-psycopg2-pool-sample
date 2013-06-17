@@ -1,0 +1,19 @@
+You must install pypy 2.0+ (by yourself), then install psycopg2cffi:
+
+    $ pip install psycopg2cffi
+
+then install gevent by following instructions in here:
+
+    https://github.com/gevent-on-pypy/pypycore/
+
+then run (don't forget the GEVENT_LOOP environment variable):
+
+    $ GEVENT_LOOP=pypycore.loop pypy sample.py dbname
+
+where dbname is the name of local PostgreSQL database which you have
+direct trust access.
+
+Everything is easier done with virtualenv. Also, you may need the development packages of the dependencies:
+
+    * libev-dev
+    * libpq-dev
